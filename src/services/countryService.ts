@@ -2,7 +2,6 @@ import { Country } from '../types/country'
 
 const BASE_URL = 'https://restcountries.com/v3.1'
 
-// Campos necesarios: bandera, nombre, capital, población, región, nombre nativo, idiomas, monedas, fronteras, subregión, dominio
 const FIELDS = 'name,flags,capital,population,region,subregion,languages,currencies,borders,tld'
 
 /*Para obtener todos los países*/
@@ -15,7 +14,7 @@ export async function getAllCountries(): Promise<Country[]> {
     const data: Country[] = await response.json()
     return data
   } catch (error) {
-    console.error('Error fetching all countries:', error)
+    console.error('Error obteniendo todos los países:', error)
     throw error
   }
 }
@@ -30,7 +29,7 @@ export async function searchCountryByName(name: string): Promise<Country[]> {
     const data: Country[] = await response.json()
     return data
   } catch (error) {
-    console.error(`Error searching country by name "${name}":`, error)
+    console.error(`Error buscando país "${name}":`, error)
     throw error
   }
 }
@@ -45,7 +44,7 @@ export async function getCountriesByRegion(region: string): Promise<Country[]> {
     const data: Country[] = await response.json()
     return data
   } catch (error) {
-    console.error(`Error fetching countries by region "${region}":`, error)
+    console.error(`Error buscando países en "${region}":`, error)
     throw error
   }
 }

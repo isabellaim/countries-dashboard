@@ -1,0 +1,35 @@
+.wave-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+  margin-top: -50px;
+}
+
+.wave {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 300px;
+}
+
+@media (min-width: 768px) {
+  .wave-container {
+    margin-top: -80px;
+  }
+  
+  .wave {
+    height: 300px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .wave-container {
+    margin-top: -100px;
+  }
+
+  .wave {
+    height: 300px;
+  }
+}

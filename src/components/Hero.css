@@ -18,7 +18,7 @@
   position: absolute;
   z-index: 10;
   top: 80px;
-  left: 30px;
+  left: 60px;
   color: #1f2937;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
@@ -38,11 +38,11 @@
 
   .heroText {
     top: 120px;
-    left: 50px;
+    left: 80px;
   }
 
   .heroTitle {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 }
 

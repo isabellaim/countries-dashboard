@@ -1,5 +1,6 @@
 import './Hero.css'
 import paisesImg from '../assets/viaje.jpg'
+import Wave from './Wave'
 
 function Hero() {
   return (
@@ -14,6 +15,7 @@ function Hero() {
           <h2 className="heroTitle">Países del mundo</h2>
         </div>
       </div>
+       <Wave />
     </section>
   )
 }

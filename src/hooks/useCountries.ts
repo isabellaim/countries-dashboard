@@ -8,8 +8,7 @@ interface UseCountriesResult {
   error: string | null
 }
 
-/*sirve para tener todos los paises:
-const { countries, loading, error } = useCountries()*/
+/*sirve para tener todos los paises: const { countries, loading, error } = useCountries()*/
 export function useCountries(): UseCountriesResult {
   const [countries, setCountries] = useState<Country[]>([])
   const [loading, setLoading] = useState(true)
