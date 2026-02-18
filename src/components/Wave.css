@@ -4,7 +4,8 @@
   overflow: hidden;
   line-height: 0;
   transform: rotate(180deg);
-  margin-top: -50px;
+  margin-top: -10px;
+  background-color: #E9F3FF;
 }
 
 .wave {
@@ -16,7 +17,7 @@
 
 @media (min-width: 768px) {
   .wave-container {
-    margin-top: -80px;
+    margin-top: -20px;
   }
   
   .wave {
@@ -26,7 +27,7 @@
 
 @media (min-width: 1024px) {
   .wave-container {
-    margin-top: -100px;
+    margin-top: -20px;
   }
 
   .wave {

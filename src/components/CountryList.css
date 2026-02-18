@@ -1,0 +1,35 @@
+.CountryList {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+  min-height: 100vh;
+}
+
+.CountryListTitle {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 5rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.CountryListGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 2rem;
+}
+
+.CountryListState {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.CountryListStateError {
+  color: #b91c1c;
+  background: #fee2e2;
+  border-radius: 12px;
+  max-width: 600px;
+  margin: 0 auto;
+}

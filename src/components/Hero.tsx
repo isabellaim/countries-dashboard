@@ -12,7 +12,7 @@ function Hero() {
           className="heroImage"
         />
         <div className="heroText">
-          <h2 className="heroTitle">Países del mundo</h2>
+          <h2 className="heroTitle">Busca un país</h2>
         </div>
       </div>
        <Wave />

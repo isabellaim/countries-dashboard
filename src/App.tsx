@@ -1,5 +1,6 @@
 import Header from './components/Header'
 import Hero from './components/Hero'
+import CountryList from './components/CountryList'
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
           <Hero />
         </section>
         <section className="countries-section">
-          {/* Aquí irán los países */}
+          <CountryList />
         </section>
       </main>
     </div>

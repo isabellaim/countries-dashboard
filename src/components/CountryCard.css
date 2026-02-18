@@ -10,7 +10,7 @@
 
 .country-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 26px rgba(31, 41, 55, 0.18);
+  box-shadow: 0 10px 22px rgba(255, 255, 255, 0.1);
 }
 
 .country-flag {
