@@ -52,6 +52,12 @@
   border: 2px solid #ffffff;
 }
 
+@media (max-width: 767px) {
+  .authorImage {
+    display: none;
+  }
+}
+
 /*Desktop*/
 @media (min-width: 768px) {
   .headerContainer {

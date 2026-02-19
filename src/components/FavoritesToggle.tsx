@@ -15,7 +15,9 @@ function FavoritesToggle({ showOnlyFavorites, onToggle, favoritesCount }: Favori
       aria-label={showOnlyFavorites ? 'Mostrar todos' : 'Mostrar solo favoritos'}
       type="button"
     >
-      ♥ Favoritos ({favoritesCount})
+      <span className="FavoritesToggleIcon">♥</span>
+      <span className="FavoritesToggleLabel">Favoritos</span>
+      <span className="FavoritesToggleCount">{favoritesCount}</span>
     </button>
   )
 }

@@ -11,6 +11,18 @@
   outline: none;
   box-shadow: 0 0px 12px rgba(0, 0, 0, 0.4);
   flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.FavoritesToggleIcon {
+  font-size: 1.1rem;
+}
+
+.FavoritesToggleCount {
+  font-weight: 700;
 }
 
 .FavoritesToggle:hover {
@@ -28,4 +40,15 @@
   background: #b91c1c;
   border-color: #b91c1c;
   box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+}
+
+@media (max-width: 767px) {
+  .FavoritesToggle {
+    width: auto;
+    padding: 0.6rem 1rem;
+  }
+
+  .FavoritesToggleLabel {
+    display: none;
+  }
 }
