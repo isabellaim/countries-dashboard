@@ -1,12 +1,20 @@
 import { Country } from '../types/country'
+import FavoriteButton from './FavoriteButton'
 import './CountryCard.css'
 
 interface CountryCardProps {
 	country: Country
 	onSelect?: (country: Country) => void
+	isFavorite?: boolean
+	onToggleFavorite?: (country: Country) => void
 }
 
-function CountryCard({ country, onSelect }: CountryCardProps) {
+function CountryCard({ country, onSelect, isFavorite = false, onToggleFavorite }: CountryCardProps) {
+	const handleFavoriteClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+		event.stopPropagation()
+		onToggleFavorite?.(country)
+	}
+
 	return (
 		<button
 			type="button"
@@ -14,6 +22,19 @@ function CountryCard({ country, onSelect }: CountryCardProps) {
 			onClick={() => onSelect?.(country)}
 			aria-label={`Ver detalles de ${country.name.common}`}
 		>
+			{onToggleFavorite && (
+				<button
+					type="button"
+					className="country-card-favorite-wrapper"
+					onClick={handleFavoriteClick}
+				>
+					<FavoriteButton
+						country={country}
+						isFavorite={isFavorite}
+						onToggle={onToggleFavorite}
+					/>
+				</button>
+			)}
 			<img
 				className="country-flag"
 				src={country.flags.png}

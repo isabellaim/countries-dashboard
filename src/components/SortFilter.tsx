@@ -14,9 +14,6 @@ const SORT_OPTIONS = [
 function SortFilter({ value, onChange }: SortFilterProps) {
   return (
     <div className="SortFilter">
-      <label className="SortFilterLabel" htmlFor="sort-filter">
-        Ordenar por:
-      </label>
       <select
         id="sort-filter"
         className="SortFilterSelect"

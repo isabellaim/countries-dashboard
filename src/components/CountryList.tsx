@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react'
 import { useCountries } from '../hooks/useCountries'
+import { useFavorites } from '../hooks/useFavorites'
 import CountryCard from './CountryCard'
 import CountryDetail from './CountryDetail'
 import SortFilter from './SortFilter'
+import FavoritesToggle from './FavoritesToggle'
 import './CountryList.css'
 import { Country } from '../types/country'
 
@@ -13,9 +15,11 @@ interface CountryListProps {
 
 function CountryList({ query, region }: CountryListProps) {
   const { countries, loading, error } = useCountries()
+  const { isFavorite, toggleFavorite, favorites } = useFavorites()
   const [filteredCountries, setFilteredCountries] = useState<Country[]>([])
   const [selectedCountry, setSelectedCountry] = useState<Country | null>(null)
   const [sort, setSort] = useState('')
+  const [showOnlyFavorites, setShowOnlyFavorites] = useState(false)
 
   useEffect(() => {
     const trimmedQuery = query.trim().toLowerCase()
@@ -28,7 +32,12 @@ function CountryList({ query, region }: CountryListProps) {
       return matchesQuery && matchesRegion
     })
 
-    // Aplicar ordenamiento en tiempo real
+    //para filtrar por favoritos
+    if (showOnlyFavorites) {
+      filtered = filtered.filter((country) => isFavorite(country.name.common))
+    }
+
+    // para el ordenamiento en tiempo real
     if (sort === 'asc') {
       filtered.sort((a, b) => a.population - b.population)
     } else if (sort === 'desc') {
@@ -36,7 +45,7 @@ function CountryList({ query, region }: CountryListProps) {
     }
     
     setFilteredCountries(filtered)
-  }, [countries, query, region, sort])
+  }, [countries, query, region, sort, showOnlyFavorites, isFavorite])
 
   if (loading) {
     return <div className="CountryListState">Cargando países...</div>
@@ -50,7 +59,14 @@ function CountryList({ query, region }: CountryListProps) {
     <div className="CountryList">
       <div className="CountryListHeader">
         <h2 className="CountryListTitle">Países del mundo</h2>
-        <SortFilter value={sort} onChange={setSort} />
+        <div className="CountryListFilters">
+          <SortFilter value={sort} onChange={setSort} />
+          <FavoritesToggle
+            showOnlyFavorites={showOnlyFavorites}
+            onToggle={setShowOnlyFavorites}
+            favoritesCount={favorites.length}
+          />
+        </div>
       </div>
       {filteredCountries.length === 0 ? (
         <div className="CountryListState">No se encontraron países.</div>
@@ -61,6 +77,8 @@ function CountryList({ query, region }: CountryListProps) {
               key={`${country.name.common}-${country.region}`}
               country={country}
               onSelect={setSelectedCountry}
+              isFavorite={isFavorite(country.name.common)}
+              onToggleFavorite={toggleFavorite}
             />
           ))}
         </div>
