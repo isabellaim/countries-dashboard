@@ -80,7 +80,29 @@ npm run dev
 
 ## Capturas de Pantalla
 
-> Pendiente 
+Guarda tus imágenes en una carpeta llamada `screenshots/` en la raíz del proyecto y referencia así:
+
+```
+![Nombre de la captura](./screenshots/archivo.png)
+```
+
+Si no tienes imágenes todavía, puedes dejar los archivos vacíos o tomar capturas desde la demo en vivo.
+
+### Página Principal / Lista de Países
+![Lista de Países](./screenshots/countryList.png)
+> Descripción: Vista principal con el grid de países, tarjetas con bandera, nombre y datos básicos.
+
+### Búsqueda en Acción
+![Búsqueda](./screenshots/search1.png)(./screenshots/search2.png)
+> Descripción: Resultado de la búsqueda por nombre con filtros aplicados desde el buscador.
+
+### Vista Detallada del País
+![Vista Detallada](./screenshots/detail.png)
+> Descripción: Modal con información extendida del país (idiomas, monedas, fronteras, subregión, TLD).
+
+### Estados de Carga / Error
+![Estados](./screenshots/states.png)
+> Descripción: Mensajes de carga y manejo de error cuando la API demora o falla.
 
 ---
 
