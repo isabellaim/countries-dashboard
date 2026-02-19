@@ -5,13 +5,21 @@
   min-height: 100vh;
 }
 
+.CountryListHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+}
+
 .CountryListTitle {
   text-align: center;
   color: #ffffff;
-  margin-bottom: 4rem;
-  margin-top: 0;
+  margin: 0;
   font-size: 1.6rem;
   font-weight: 700;
+  width: 100%;
 }
 
 .CountryListGrid {

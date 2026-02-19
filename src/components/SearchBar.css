@@ -47,6 +47,18 @@
     box-shadow: 0 0px 12px rgba(0, 0, 0, 0.4);
 }
 
+.SearchBarSort {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    color: #1f2937;
+    border-radius: 4rem;
+    border: 2px solid #e1eaff;
+    background: #ffffff;
+    font-size: 1rem;
+    outline: none;
+    box-shadow: 0 0px 12px rgba(0, 0, 0, 0.4);
+}
+
 .SearchBarButton {
     border: none;
     background: #1f2937;
