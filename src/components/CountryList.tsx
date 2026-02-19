@@ -7,28 +7,27 @@ import { Country } from '../types/country'
 
 interface CountryListProps {
   query: string
+  region: string
 }
 
-function CountryList({ query }: CountryListProps) {
+function CountryList({ query, region }: CountryListProps) {
   const { countries, loading, error } = useCountries()
   const [filteredCountries, setFilteredCountries] = useState<Country[]>([])
   const [selectedCountry, setSelectedCountry] = useState<Country | null>(null)
 
   useEffect(() => {
     const trimmedQuery = query.trim().toLowerCase()
-    if (!trimmedQuery) {
-      setFilteredCountries(countries)
-      return
-    }
-
+    
     const filtered = countries.filter((country) => {
       const common = country.name.common.toLowerCase()
       const official = country.name.official?.toLowerCase() ?? ''
-      return common.includes(trimmedQuery) || official.includes(trimmedQuery)
+      const matchesQuery = !trimmedQuery || common.includes(trimmedQuery) || official.includes(trimmedQuery)
+      const matchesRegion = !region || country.region === region
+      return matchesQuery && matchesRegion
     })
     
     setFilteredCountries(filtered)
-  }, [countries, query])
+  }, [countries, query, region])
 
   if (loading) {
     return <div className="CountryListState">Cargando países...</div>

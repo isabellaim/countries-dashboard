@@ -6,16 +6,23 @@ import SearchBar from './SearchBar'
 interface HeroProps {
   query: string
   onQueryChange: (value: string) => void
+  region: string
+  onRegionChange: (value: string) => void
 }
 
-function Hero({ query, onQueryChange }: HeroProps) {
+function Hero({ query, onQueryChange, region, onRegionChange }: HeroProps) {
   return (
     <section>
       <div className="heroContainer">
         <div className="heroText">
           <h2 className="heroTitle">Busca un país</h2>
           <div className="HeroSearch">
-            <SearchBar value={query} onChange={onQueryChange} />
+            <SearchBar
+              query={query}
+              onQueryChange={onQueryChange}
+              region={region}
+              onRegionChange={onRegionChange}
+            />
           </div>
         </div>
         <img

@@ -24,7 +24,12 @@
 
 .HeroSearch {
   margin-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
 }
+
 
 .heroImage {
   flex: 1;
@@ -47,6 +52,8 @@
   .HeroSearch {
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
 
   .heroText {
