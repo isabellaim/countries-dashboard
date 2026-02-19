@@ -80,20 +80,13 @@ npm run dev
 
 ## Capturas de Pantalla
 
-Guarda tus imágenes en una carpeta llamada `screenshots/` en la raíz del proyecto y referencia así:
-
-```
-![Nombre de la captura](./screenshots/archivo.png)
-```
-
-Si no tienes imágenes todavía, puedes dejar los archivos vacíos o tomar capturas desde la demo en vivo.
-
 ### Página Principal / Lista de Países
 ![Lista de Países](./screenshots/countryList.png)
 > Descripción: Vista principal con el grid de países, tarjetas con bandera, nombre y datos básicos.
 
 ### Búsqueda en Acción
-![Búsqueda](./screenshots/search1.png)(./screenshots/search2.png)
+![Búsqueda1](./screenshots/search1.png)
+![Búsqueda2](./screenshots/search2.png)
 > Descripción: Resultado de la búsqueda por nombre con filtros aplicados desde el buscador.
 
 ### Vista Detallada del País
