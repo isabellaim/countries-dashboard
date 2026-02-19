@@ -17,7 +17,7 @@ Dashboard interactivo para explorar países usando la API de REST Countries. Inc
 | Tipo de Enlace | URL |
 |----------------|-----|
 | Repositorio de GitHub | https://github.com/isabellaim/countries-dashboard |
-| Video de Loom | [pendiente] |
+| Video de Loom | https://www.loom.com/share/973114611914405f842701dde5c5c095 |
 | Demo en Vivo (Vercel) | https://countries-dashboard-blue.vercel.app/ |
 
 ---
