@@ -1,7 +1,9 @@
-import { useMemo } from 'react'
+import { useState, useEffect } from 'react'
 import { useCountries } from '../hooks/useCountries'
 import CountryCard from './CountryCard'
+import CountryDetail from './CountryDetail'
 import './CountryList.css'
+import { Country } from '../types/country'
 
 interface CountryListProps {
   query: string
@@ -9,16 +11,23 @@ interface CountryListProps {
 
 function CountryList({ query }: CountryListProps) {
   const { countries, loading, error } = useCountries()
+  const [filteredCountries, setFilteredCountries] = useState<Country[]>([])
+  const [selectedCountry, setSelectedCountry] = useState<Country | null>(null)
 
-  const filteredCountries = useMemo(() => {
+  useEffect(() => {
     const trimmedQuery = query.trim().toLowerCase()
-    if (!trimmedQuery) return countries
+    if (!trimmedQuery) {
+      setFilteredCountries(countries)
+      return
+    }
 
-    return countries.filter((country) => {
+    const filtered = countries.filter((country) => {
       const common = country.name.common.toLowerCase()
       const official = country.name.official?.toLowerCase() ?? ''
       return common.includes(trimmedQuery) || official.includes(trimmedQuery)
     })
+    
+    setFilteredCountries(filtered)
   }, [countries, query])
 
   if (loading) {
@@ -37,9 +46,19 @@ function CountryList({ query }: CountryListProps) {
       ) : (
         <div className="CountryListGrid">
           {filteredCountries.map((country) => (
-            <CountryCard key={`${country.name.common}-${country.region}`} country={country} />
+            <CountryCard
+              key={`${country.name.common}-${country.region}`}
+              country={country}
+              onSelect={setSelectedCountry}
+            />
           ))}
         </div>
+      )}
+      {selectedCountry && (
+        <CountryDetail
+          country={selectedCountry}
+          onClose={() => setSelectedCountry(null)}
+        />
       )}
     </div>
   )

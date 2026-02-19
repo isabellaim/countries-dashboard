@@ -3,11 +3,17 @@ import './CountryCard.css'
 
 interface CountryCardProps {
 	country: Country
+	onSelect?: (country: Country) => void
 }
 
-function CountryCard({ country }: CountryCardProps) {
+function CountryCard({ country, onSelect }: CountryCardProps) {
 	return (
-		<article className="country-card">
+		<button
+			type="button"
+			className="country-card country-card-button"
+			onClick={() => onSelect?.(country)}
+			aria-label={`Ver detalles de ${country.name.common}`}
+		>
 			<img
 				className="country-flag"
 				src={country.flags.png}
@@ -27,7 +33,7 @@ function CountryCard({ country }: CountryCardProps) {
 					<span className="label">Región:</span> {country.region}
 				</p>
 			</div>
-		</article>
+		</button>
 	)
 }
 

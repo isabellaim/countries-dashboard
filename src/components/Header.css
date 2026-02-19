@@ -3,6 +3,7 @@
     top: 0;
     padding: 1rem 1.5rem;
 }
+
 .headerContainer {
   position: sticky;
   top: 0;
@@ -20,7 +21,6 @@
 }
 
 .headerTitle {
-  margin: 0;
   font-size: 1.2rem;
   font-weight: 600;
 }

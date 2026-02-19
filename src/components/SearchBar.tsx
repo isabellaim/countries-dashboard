@@ -6,7 +6,7 @@ interface SearchBarProps {
   placeholder?: string
 }
 
-function SearchBar({ value, onChange, placeholder = 'Buscar país...' }: SearchBarProps) {
+function SearchBar({ value, onChange, placeholder = 'Escribe un país...' }: SearchBarProps) {
   return (
     <div className="SearchBar">
       <input

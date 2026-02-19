@@ -8,6 +8,13 @@
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.country-card-button {
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+}
+
 .country-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 22px rgba(255, 255, 255, 0.1);
