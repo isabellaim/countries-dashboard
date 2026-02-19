@@ -8,7 +8,8 @@
 .CountryListTitle {
   text-align: center;
   color: #ffffff;
-  margin-bottom: 5rem;
+  margin-bottom: 4rem;
+  margin-top: 0;
   font-size: 1.6rem;
   font-weight: 700;
 }
